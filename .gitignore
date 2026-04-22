@@ -1,0 +1,9 @@
+.env
+dados/bronze/
+dados/silver/
+dados/gold/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.db
