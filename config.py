@@ -32,7 +32,9 @@ class Config:
         raw_caged = os.getenv("CAGED_ANO_TESTE")
         raw_rais = os.getenv("RAIS_ANO_TESTE")
         raw_limite = os.getenv("BQ_LIMITE_TESTE")
-        dados_dir = Path(os.getenv("DADOS_DIR", "dados"))
+        _root = Path(__file__).parent
+        raw = os.getenv("DADOS_DIR", "dados")
+        dados_dir = Path(raw) if Path(raw).is_absolute() else _root / raw
         return cls(
             gcp_project_id=gcp,
             pnad_uf_codes=os.getenv("PNAD_UF_CODES", "41,42,43"),
